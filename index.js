@@ -11,9 +11,9 @@ const fs = require('fs');
 
     console.log(`Writing on ${file} file`)
     
-    fs.writeFileSync(file, 'utf8', () => {});
+    fs.writeFileSync(file, md5(randomNumber), () => {});
 
-    exec(`git commit -am "Modif ${file} file content"`, (error, stdout, stderr) => {
+    exec(`git commit -am "Modif ${file} file content (${md5(randomNumber)})"`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
