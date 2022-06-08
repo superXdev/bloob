@@ -1,6 +1,7 @@
 const { execSync } = require("child_process");
 const md5 = require('md5');
 const fs = require('fs');
+const { dirname } = require('path');
 
 function sleep(ms) {
   return new Promise((resolve) => {
@@ -8,8 +9,12 @@ function sleep(ms) {
   });
 }
 
+function basePath() {
+    return dirname(require.main.filename);
+}
+
 function execCommand(command) {
-    execSync(command, (error, stdout, stderr) => {
+    execSync(command, { cwd: basePath() }, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
