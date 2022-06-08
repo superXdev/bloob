@@ -8,6 +8,20 @@ function sleep(ms) {
   });
 }
 
+function execCommand(command) {
+    exec(command, (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(stdout);
+    });
+}
+
 (async function() {
     while(true) {
         const randomNumber = Math.floor(Math.random() * 10000000);
@@ -20,17 +34,8 @@ function sleep(ms) {
         
         fs.writeFileSync(file, md5(randomNumber), () => {});
 
-        exec(`git commit -am "Modif ${file} file content (${md5(randomNumber)})"`, (error, stdout, stderr) => {
-            if (error) {
-                console.log(`error: ${error.message}`);
-                return;
-            }
-            if (stderr) {
-                console.log(`stderr: ${stderr}`);
-                return;
-            }
-            console.log(stdout);
-        });
+        execCommand(`git commit -am "Modif ${file} file content (${md5(randomNumber)})"`)
+        execCommand(`git push https://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@github.com/superXdev/bloob.git`)
 
         await sleep(1 * 60 * 1000)
     }
