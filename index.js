@@ -15,7 +15,7 @@ const fs = require('fs');
         console.log(err);
     });
 
-    exec(`git commit -am`, (error, stdout, stderr) => {
+    exec(`git commit -am "Modif ${file} file content"`, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
