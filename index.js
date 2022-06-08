@@ -1,4 +1,4 @@
-const { exec } = require("child_process");
+const { execSync } = require("child_process");
 const md5 = require('md5');
 const fs = require('fs');
 
@@ -9,7 +9,7 @@ function sleep(ms) {
 }
 
 function execCommand(command) {
-    exec(command, (error, stdout, stderr) => {
+    execSync(command, (error, stdout, stderr) => {
         if (error) {
             console.log(`error: ${error.message}`);
             return;
