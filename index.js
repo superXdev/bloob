@@ -29,21 +29,22 @@ function execCommand(command) {
 
 (async function() {
     while(true) {
-        const randomNumber = Math.floor(Math.random() * 10000000);
+        console.log(basePath())
+        // const randomNumber = Math.floor(Math.random() * 10000000);
 
-        const decision = Math.floor(Math.random() * 2);
+        // const decision = Math.floor(Math.random() * 2);
 
-        const file = (decision === 1) ? './foo.txt' : './bar.txt';
+        // const file = (decision === 1) ? './foo.txt' : './bar.txt';
 
-        console.log(`Writing on ${file} file`)
+        // console.log(`Writing on ${file} file`)
         
-        fs.writeFileSync(file, md5(randomNumber), () => {});
+        // fs.writeFileSync(file, md5(randomNumber), () => {});
 
-        execCommand(`git commit -am "Modif ${file} file content (${md5(randomNumber)})"`)
+        // execCommand(`git commit -am "Modif ${file} file content (${md5(randomNumber)})"`)
 
-        await sleep(1000)
+        // await sleep(1000)
 
-        execCommand(`git push https://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@github.com/superXdev/bloob.git`)
+        // execCommand(`git push https://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@github.com/superXdev/bloob.git`)
 
         await sleep(5000)
     }
