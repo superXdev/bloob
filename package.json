@@ -1,0 +1,23 @@
+{
+  "name": "bloob",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superXdev/bloob.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superXdev/bloob/issues"
+  },
+  "homepage": "https://github.com/superXdev/bloob#readme",
+  "dependencies": {
+    "md5": "^2.3.0"
+  }
+}
