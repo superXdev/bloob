@@ -40,6 +40,9 @@ function execCommand(command) {
         fs.writeFileSync(file, md5(randomNumber), () => {});
 
         execCommand(`git commit -am "Modif ${file} file content (${md5(randomNumber)})"`)
+
+        await sleep(1000)
+
         execCommand(`git push https://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@github.com/superXdev/bloob.git`)
 
         await sleep(5000)
