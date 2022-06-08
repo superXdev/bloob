@@ -11,7 +11,7 @@ const fs = require('fs');
 
     console.log(`Writing on ${file} file`)
     
-    fs.writeFile(file, 'utf8', () => {});
+    fs.writeFileSync(file, 'utf8', () => {});
 
     exec(`git commit -am "Modif ${file} file content"`, (error, stdout, stderr) => {
         if (error) {
