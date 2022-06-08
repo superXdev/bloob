@@ -45,7 +45,7 @@ function execCommand(command) {
 
         execCommand(`git push https://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@github.com/superXdev/bloob.git`)
 
-        await sleep(30 * 60 * 1000)
+        await sleep(20 * 60 * 1000)
     }
 })();
 
