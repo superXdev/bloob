@@ -32,7 +32,7 @@ function sleep(ms) {
             console.log(stdout);
         });
 
-        await sleep(5000)
+        await sleep(1 * 60 * 1000)
     }
 })();
 
